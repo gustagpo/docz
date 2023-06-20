@@ -1,0 +1,53 @@
+{
+  "name": "br.com.docz.app",
+  "version": "0.0.1",
+  "displayName": "Docz",
+  "cordova": {
+    "platforms": [
+      "browser",
+      "android",
+      "ios"
+    ],
+    "plugins": {
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "1039865123784-6ekd1te0buu9ump2jjiqi5radd2384ag.apps.googleusercontent.com",
+        "WEB_APPLICATION_CLIENT_ID": "1039865123784-6ekd1te0buu9ump2jjiqi5radd2384ag.apps.googleusercontent.com"
+      },
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-tts": {},
+      "cordova-plugin-media": {},
+      "cordova-plugin-device": {},
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-camera": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-is-debug": {}
+    }
+  },
+  "dependencies": {
+    "cordova": "^9.0.0",
+    "cordova-android": "^7.1.4",
+    "cordova-browser": "^5.0.4",
+    "cordova-ios": "^4.5.5",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-googleplus": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
+    "cordova-plugin-media": "^5.0.2",
+    "cordova-plugin-tts": "git+https://github.com/vilic/cordova-plugin-tts.git",
+    "cordova-plugin-whitelist": "git+https://github.com/apache/cordova-plugin-whitelist.git",
+    "phonegap-plugin-barcodescanner": "^7.1.2"
+  },
+  "devDependencies": {
+    "cordova-plugin-camera": "^4.1.0",
+    "cordova-plugin-is-debug": "^1.0.0",
+    "cordova-sqlite-storage": "^2.3.3"
+  }
+}

@@ -3,6 +3,5 @@ hooks/
 node_modules/
 platforms/
 plugins/
-package.json
 package-lock.json
 
