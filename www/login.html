@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Carlos Feijão">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="icon" type="image/png" href="images/icons/128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/icons/64x64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="images/icons/32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon.ico">
+    <link rel="shortcut icon" href="images/icons/16x16.png">
+
+    <title>Docz</title>
+
+    <link href="css/style.css"           rel="stylesheet" type="text/css">
+    <link href="css/menus.css"           rel="stylesheet" type="text/css">
+    <link href="css/framework.css"       rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css"    rel="stylesheet" type="text/css">
+    <link href="css/animate.css"         rel="stylesheet" type="text/css">
+    <link href="css/loading.css"         rel="stylesheet" type="text/css">
+    <link href="css/load-ellipsis.css"   rel="stylesheet" type="text/css">
+    <link href="css/docz.css"            rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="no-sidebar">
+
+    <div class="preloader-full">
+        <div class="preloader-full-msg">
+            <div>
+                <p><img src="images/icons/logo.png" style="display: inline"/></p>
+            </div>
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            <p data-ref="msg"></p>
+        </div>
+    </div>
+
+    <div id="header-fixed" class="header-light disabled"></div>
+    <div id="footer-fixed" class="footer-menu footer-light disabled"></div>
+
+    <div class="gallery-fix"></div>
+
+    <div class="all-elements">
+        <div class="snap-drawers">
+
+            <div class="snap-drawer snap-drawer-left sidebar-light-clean"></div>
+            <div class="snap-drawer snap-drawer-right sidebar-light-clean"></div>
+
+            <div id="content" class="snap-content">
+
+                <div class="header-clear" style="height: 37px!important;"></div>
+
+                <div class="content">
+                    <div class="page-login full-bottom">
+                        <a href="#" class="page-login-logo"></a>
+                        <div id="login-content">
+                            <div class="login-input">
+                                <i class="fa fa-user"></i>
+                                <input id="input-login" type="text" value="Usuario">
+                            </div>
+                            <div class="login-password">
+                                <i class="fa fa-lock"></i>
+                                <input id="input-password" type="password" value="password">
+                            </div>
+                            <div class="login-input">
+                                <i class="fa fa-building"></i>
+                                <input id="input-cliente" type="text" value="Cliente">
+                            </div>
+                            <a id="btn-mostrar" href="#" class="login-forgot" style="margin-bottom: 10px"><i class="fa fa-eye"></i>Mostrar Senha</a>
+                            <div class="clear"></div>
+                            <a id="btn-entrar" href="#" class="login-button button button-small button-green button-fullscreen full-bottom">Entrar</a>
+                            <!-- <div class="decoration"></div> -->
+                            <!-- <div class="clear"></div> -->
+                            <!-- <a id="btn-login-google" href="#" class="google-login google-color"><i class="fa fa-google"></i>Login with Google</a> -->
+                            <BR/>
+                            <div id="login-config">
+                                <a id="btn-url" href="#" class="login-button button button-small button-blue button-fullscreen full-bottom">Configurar Docz</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fullscreen footer footer-light" style="padding: 20px 20px;!important;">
+                        <p class="small-text no-bottom center-text">(c) Copyright 2020. Todos os Direitos Reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Top</a>
+    </div>
+
+    <div id="error-notification" class="top-notification bg-red-dark">
+        <h4>Problema</h4>
+        <p></p>
+    </div>
+    <div id="info-notification" class="top-notification bg-blue-dark">
+        <h4>Info</h4>
+        <p></p>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script type="text/javascript" src="js/jquery.jgrowl.min.js"></script>
+<script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="bower_components/swiped/dist/swiped.min.js"></script>
+
+<script type="text/javascript" src="api/api.js"></script>
+<script type="text/javascript" src="api/util/storage.js"></script>
+<script type="text/javascript" src="api/util/loading.js"></script>
+<script type="text/javascript" src="api/util/error.js"></script>
+<script type="text/javascript" src="api/util/rest.js"></script>
+
+<script type="text/javascript" src="api/script/login.js"></script>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+Customize this policy to fit your own app's needs. For more guidance, see:
+https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+Some notes:
+* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+* Enable inline JS: add 'unsafe-inline' to default-src
+* To allow everything (for testing only, please): content="default-src * 'unsafe-inline' 'unsafe-eval'"
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<link rel="stylesheet" type="text/css" href="../inc/Aerophane.css">
+<link rel="stylesheet" type="text/css" href="../inc/main.css">
+
+<title>Aerophane - Home</title>
+
+<body>
+
+<header>
+<button>Menu</button>
+<h1>Home (H1 body header)</h1>
+</header>
+
+<article>
+<section>
+<header>
+<h2>Section Header H2</h2>
+</header>
+<p>Google's <a href="https://material.google.com/">material design</a> is a visual style for mobile user interfaces. Aerophane is a template that embraces material design ideas to create an ultra light starting point for hybrid mobile web development.
+<p>Aerophane strives to have a small footprint, run blazingly fast, and be easily maintainable template of common features used in modern mobile UIs.
+<footer>
+<button>Section footer button</button>
+</footer>
+</section>
+
+<section>
+<header>
+<h3>Section Header H3</h3>
+</header>
+
+<p>Aerophane does not use copious classes to connect styles to HTML elements. Elements acquire their styling based on their position in the document. For example, the <code>&lt;article&gt;</code> tag is the basic container, a <code>&lt;section&gt;</code>` element inside an article is displayed in a "card" style, and a <code>&lt;header&gt;</code>` inside a section card looks like the blue space above. Check the source code of the examples for specifics.
+</section>
+
+<section>
+<header>
+<h4>Section Header H4</h4>
+</header>
+<p>Aerophane comes with a few common UI features, most notably, a <button id="exampleDialog">dialog</button>
+<p>Once you initialize the Aerophane object, you have access to a few other JavaScript utility functions including:
+
+<h4>forEachElement</h4>
+<p>The JavaScript forEach array method doesn't work on element collections, so I find his handy to avoid writing for loops.
+<pre>aero.forEachElement(<em>elementCollection</em>, <em>elementFunction</em>);</pre>
+
+<h4>classname</h4>
+<p>Another utility function that Aerophane adds that would be completely unnecessary if you are using jQuery is a method to work with class attributes.
+<pre>aero.classname.add(<em>element</em>, <em>classname</em>);
+aero.classname.remove(<em>element</em>, <em>classname</em>);
+</pre>
+
+<h4>touchclick</h4>
+<p>A simple hack to remove some of the unnecessary sluggishness of hybrid mobile is to replace the JavaScript <code>onclick</code> event handler with <code>ontouchstart</code>. The <code>aero.touchclick</code> method event will do this while falling back to click on none-touch interfaces.</p>
+</section>
+
+<section>
+<h2>Modular File Structure</h2>
+<p>Each screen is a separate HTML page in its own folder. Files unique to the page - CSS, JavaScript, images - are contained in that folder. Application-wide files should be placed in the <code>inc</code> folder.
+</section>
+
+<footer>
+<p>&copy; ChaosScape 2017</p>
+</footer>
+
+</article>
+
+<footer>
+<button>Button</button>
+</footer>
+
+<div class="dialog">
+<h2>Dialog</h2>
+<p><code>&lt;div&gt;</code> elements with the class "dialog" that are a direct child of the body tag will be not displayed by default. They can be shown like this:
+<pre>aero.showDialog(<em>element</em>);</pre>
+<p>Touch the background to close.
+</div>
+
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../inc/Aerophane.js"></script>
+<script type="text/javascript" src="../inc/main.js"></script>
+<script type="text/javascript" src="home.js"></script>

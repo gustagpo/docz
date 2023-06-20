@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Bruno Rodrigues">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="icon" type="image/png" href="images/icons/128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/icons/64x64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="images/icons/32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon.ico">
+    <link rel="shortcut icon" href="images/icons/16x16.png">
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jqueryui.js"></script>
+    <script type="text/javascript" src="js/framework-plugins.js"></script>
+    <script type="text/javascript" src="js/jquery.jgrowl.min.js"></script>
+    <script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="bower_components/swiped/dist/swiped.min.js"></script>
+
+    <script type="text/javascript" src="api/api.js"></script>
+    <script type="text/javascript" src="api/util/storage.js"></script>
+    <script type="text/javascript" src="api/util/loading.js"></script>
+    <script type="text/javascript" src="api/util/error.js"></script>
+    <script type="text/javascript" src="api/util/rest.js"></script>
+
+    <title>Docz</title>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/menus.css" rel="stylesheet" type="text/css">
+    <link href="css/framework.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/loading.css" rel="stylesheet" type="text/css">
+    <link href="css/load-ellipsis.css" rel="stylesheet" type="text/css">
+    <link href="css/docz.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            return new Promise((resolve, reject) => {
+                console.log('Recuperando código de guarda.');
+
+                const rest = new docz.util.rest();
+                rest.docz('pegaProjetosCliente', {
+                    alias: docz.util.storage.get('cliente'),
+                    login: docz.util.storage.get('user'),
+                    app: 'APP_ANDROID_SOS'
+                }).then((rss) => {
+
+                    var obj = rss.pegaProjetosClienteReturn;
+                    obj = JSON.parse(obj);
+
+                    console.log(obj);
+
+                    if (obj.status == "success") {
+                        docz.util.storage.set('projetos', JSON.stringify(obj.projetos));
+
+                        for (var i in obj.projetos) {
+                            let projeto = obj.projetos[i];
+
+                            var html = '<tr>';
+
+                            html += '<td>' + projeto.id + '</td>';
+                            html += '<td>' + projeto.nome + '</td>';
+                            html += '<td width="1%" align="center"><a href="javascript:visualizar(\'' + projeto.id + '\')" title="Selecionar projeto"><img src="images/icons/accept.png" alt="Selecionar projeto" /></td>';
+
+                            html += '</tr>';
+
+                            $("#listaProjetosCrud").append(html);
+                        }
+                    }
+
+                    docz.util.loading.stop();
+
+                }).catch(err => {
+
+                    alert("Erro ao buscar projetos");
+                    console.log(err);
+                });
+
+                resolve();
+            });
+        });
+
+        function voltarLogin() {
+            window.location = "login.html";
+        }
+
+        function visualizar(idProjeto) {
+            let projetos = JSON.parse(docz.util.storage.get("projetos"));
+
+            let projeto = null;
+
+            $.each(projetos, function (key, proj) {
+                if (proj.id == idProjeto)
+                    projeto = proj;
+            });
+
+            docz.util.storage.set('projeto', JSON.stringify(projeto));
+            docz.util.storage.set('camposOS', projeto.camposOS);
+            docz.util.storage.set('codigoGuarda', projeto.codigoGuarda);
+            docz.util.storage.set('nomeProjeto', projeto.nome);
+
+            //window.location = "teste-novo.html";
+            window.location = "main.html";
+        }
+
+        function isCodSOS(codigo) {
+            return this.isCaixa(codigo) || this.isObjetoSOS(codigo);
+        }
+
+        function isEndereco(codigo) {
+            if (codigo.endsWith("SOS")) {
+                if (codigo.startsWith("EDG") ||
+                    codigo.startsWith("PLTG") ||
+                    codigo.startsWith("EXPG") ||
+                    codigo.startsWith("ATRANSG") ||
+                    codigo.startsWith("ETRANSG") ||
+                    codigo.startsWith("IMPLANG") ||
+                    codigo.startsWith("REGISTRG") ||
+                    codigo.startsWith("ETRATAG") ||
+                    codigo.startsWith("SAIDADEFG")
+                ) {
+                    return true;
+                }
+            }
+        }
+
+        function isObjetoSOS(codigo) {
+            var retorno = false;
+            if (codigo.length > 3) {
+                if (codigo.endsWith("SOS")) {
+                    if (codigo.startsWith("CX") || codigo.startsWith("LM") || codigo.startsWith("CB") || codigo.startsWith("DC")) {
+                        retorno = true;
+                    }
+                }
+            }
+            return retorno;
+        }
+    </script>
+
+</head>
+
+<body class="no-sidebar">
+
+    <div class="preloader-full">
+        <div class="preloader-full-msg">
+            <div>
+                <p><img src="images/icons/logo.png" style="display: inline" /></p>
+            </div>
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p data-ref="msg"></p>
+        </div>
+    </div>
+
+    <div id="header-fixed" class="header-light disabled"></div>
+    <div id="footer-fixed" class="footer-menu footer-light disabled"></div>
+
+    <div class="gallery-fix"></div>
+
+    <div class="all-elements">
+        <div class="snap-drawers">
+
+            <div class="snap-drawer snap-drawer-left sidebar-light-clean"></div>
+            <div class="snap-drawer snap-drawer-right sidebar-light-clean"></div>
+
+            <div id="content" class="snap-content">
+
+                <div class="header-clear" style="height: 37px!important;"></div>
+
+                <div class="content">
+                    <div class="page-login full-bottom">
+                        <a href="#" class="page-login-logo"></a>
+
+                        <div data-ref="page" id="main-consulta-os" style="margin-top: 20px">
+
+                            <div class="container heading-style-5">
+                                <h4 class="heading-title" id="labelConsultaSolicitacoes">Projetos Disponíveis</h4>
+                            </div>
+
+                            <div data-ref="loading" class="center-text" style="display: none;">
+                                <div class="lds-ellipsis">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+                                <div style="color: red; padding-bottom:1px;" data-ref="error"></div>
+                                <table id="tableListaOS" cellspacing="0" class="table" style="padding-top:1px;">
+                                    <thead>
+                                        <th style="with: 5px">Código</th>
+                                        <th>Projeto</th>
+                                        <th>A&ccedil;&atilde;o</th>
+                                    </thead>
+                                    <tbody data-ref="listaProjetosCrud" id="listaProjetosCrud"></tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="login-config">
+                            <a id="btn-voltar-login" href="javascript:voltarLogin()" class="login-button button button-small button-blue button-fullscreen full-bottom">Voltar para Login</a>
+                        </div>
+                    </div>
+                    <div class="container-fullscreen footer footer-light" style="padding: 20px 20px;!important;">
+                        <p class="small-text no-bottom center-text">(c) Copyright 2020. Todos os Direitos Reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Top</a>
+    </div>
+
+    <div id="error-notification" class="top-notification bg-red-dark">
+        <h4>Problema</h4>
+        <p></p>
+    </div>
+
+    <div id="info-notification" class="top-notification bg-blue-dark">
+        <h4>Info</h4>
+        <p></p>
+    </div>
+
+</body>
+
+</html>

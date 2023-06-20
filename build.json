@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "debug.keystore",
+            "storePassword": "android",
+            "alias": "androiddebugkey",
+            "password" : "android",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "release.keystore",
+            "storePassword": "",
+            "alias": "docz.app.release",
+            "password" : "carlosfeijao",
+            "keystoreType": ""
+        }
+    }
+}

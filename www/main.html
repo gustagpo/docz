@@ -1,0 +1,745 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SOS Tecnologia">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="icon" type="image/png" href="images/icons/128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="images/icons/64x64.png" sizes="64x64">
+    <link rel="icon" type="image/png" href="images/icons/32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon.ico">
+    <link rel="shortcut icon" href="images/icons/16x16.png">
+
+    <title>Docz</title>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/menus.css" rel="stylesheet" type="text/css">
+    <link href="css/framework.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/animate.css" rel="stylesheet" type="text/css">
+    <link href="css/loading.css" rel="stylesheet" type="text/css">
+    <link href="css/load-ellipsis.css" rel="stylesheet" type="text/css">
+    <link href="css/docz.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="left-sidebar">
+
+    <div class="preloader-full">
+        <div class="preloader-full-msg">
+            <div>
+                <p><img src="images/icons/logo.png" style="display: inline" /></p>
+            </div>
+            <div class="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p data-ref="msg"></p>
+        </div>
+    </div>
+
+    <div class="error-full" style="display: none;">
+        <div class="error-full-msg">
+            <h3>Ops!</h3>
+            <p data-ref="msg"></p>
+        </div>
+    </div>
+
+    <!-- Fixed Header -->
+    <div id="header-fixed" class="header-light">
+        <a class="header-icon-left open-left-sidebar" href="#"><i class="fa fa-navicon"></i></a>
+    </div>
+
+    <div id="footer-fixed" class="footer-menu footer-light"></div>
+
+    <div class="gallery-fix"></div>
+
+    <div class="all-elements">
+
+        <div class="snap-drawers">
+
+            <!-- Menu -->
+            <div class="snap-drawer snap-drawer-left sidebar-light-clean">
+                <p class="sidebar-divider">Docz Mobile</p>
+                <div id="menu" class="sidebar-menu">
+
+                    <a id="menu-painel" data-script="painel" class="menu-item" href="#">
+                        <i class="fa fa-square bg-blue-dark" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Painel</em>
+                    </a>
+
+                    <a id="menu-audit-endereco" data-script="endereco" class="menu-item" href="#main-audit-endereco">
+                        <i class="fa fa-archive bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Arquivar Caixa</em>
+                    </a>
+
+                    <a id="menu-audit-legado" data-script="legado" class="menu-item" href="#main-audit-legado">
+                        <i class="fa fa-archive bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Importar Legado</em>
+                    </a>
+
+                    <a id="menu-audit-os" data-script="audit_os" class="menu-item" href="#main-audit-os">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Auditoria de O.S</em>
+                    </a>
+
+                    <a id="menu-importar-caixa" data-script="importar_caixa" class="menu-item" href="#main-importar-caixa">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Fotografar Espelho Caixa</em>
+                    </a>
+
+                    <a id="menu-audit-arquivamento" data-script="arquivamento" class="menu-item" href="#main-audit-arquivamento">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Arquivar Documento</em>
+                    </a>
+
+                    <a id="menu-consulta" data-script="consulta" class="menu-item" href="#main-consulta">
+                        <i class="fa fa-search bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Consultar Objeto</em>
+                    </a>
+
+                    <a id="menu-consulta-dependentes" data-script="consulta_dependentes" class="menu-item" href="#main-consulta-dependentes">
+                        <i class="fa fa-search bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Consultar Conteúdo Container</em>
+                    </a>
+
+                    <a id="menu-consulta-os" data-script="consulta_os" class="menu-item" href="#main-consulta-os">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Solicita&ccedil;&otilde;es</em>
+                    </a>
+
+                    <a id="menu-arquivar-em-container" data-script="arquivar_em_container" class="menu-item" href="#main-arquivar-em-container">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Arquivar em Container</em>
+                    </a>
+
+                    <a id="menu-atribuir-localizacao" data-script="atribuir_localizacao" class="menu-item" href="#main-atribuir-localizacao">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Atribuir Localização</em>
+                    </a>
+
+                    <a id="menu-status-gestao-documental" data-script="status_gestao_documental" class="menu-item" href="#main-status-gestao-documental">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Status Gestão Documental</em>
+                    </a>
+
+                    <a id="menu-sobre" data-script="sobre" class="menu-item" href="#main-sobre">
+                        <i class="fa fa-navicon bg-night-light" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Sobre</em>
+                    </a>
+
+                    <a id="menu-sair" class="menu-item" href="#sair">
+                        <i class="fa fa-close bg-red-dark" style="padding-top: 3px"></i>
+                        <em style="padding-top: 3px">Sair</em>
+                    </a>
+                </div>
+            </div>
+
+            <!--Right Sidebar -->
+            <div class="snap-drawer snap-drawer-right sidebar-light-clean">
+
+            </div>
+
+            <div id="content" class="snap-content">
+
+                <div class="header-clear">
+                </div>
+
+                <div class="content" style="padding-left: 10px;padding-right: 10px;">
+
+                    <div data-ref="page" id="main-painel-guarda" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Docz MOBILE</h4>
+                            <i class="fa fa-navicon heading-icon"></i>
+                            <div class="line bg-black"></div>
+                            <a href="#" data-ref="btn-endereco" class="button button-blue p70">Arquivar Caixa</a>
+                            <br />
+                            <a href="#" data-ref="btn-legado" class="button button-blue p70">Importar Legado</a>
+                            <br />
+                            <a href="#" data-ref="btn-arquivamento" class="button button-blue p70">Arquivar Documento</a>
+                            <br />
+                            <a href="#" data-ref="btn-audit-os" class="button button-blue p70">Auditoria de O.S</a>
+                            <br />
+                            <a href="#" data-ref="btn-importar-caixa" class="button button-blue p70">Fotografar Espelho Caixa</a>
+                            <br />
+                            <a href="#" data-ref="btn-consulta" class="button button-blue p70">Consultar Objeto</a>
+                            <br />
+                            <a href="#" data-ref="btn-consulta-dependentes" class="button button-blue p70">Consultar Conteúdo Container</a>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-painel-consulta" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Docz Mobile</h4>
+                            <i class="fa fa-navicon heading-icon"></i>
+                            <div class="line bg-black"></div>
+                            <a href="#" data-ref="btn-consulta" class="button button-blue p70">Consulta de Objeto</a>
+                            <a href="#" data-ref="btn-consulta-dependentes" class="button button-blue p70">Consulta Conteúdo Container</a>
+                            <a href="#" data-ref="btn-consulta-os" class="button button-blue p70">Solicita&ccedil;&otilde;es</a>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-painel-gestao-documental" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Docz Mobile - Gestão Documental</h4>
+                            <i class="fa fa-navicon heading-icon"></i>
+                            <div class="line bg-black"></div>
+                            <a href="#" data-ref="btn-arquivar-em-container" class="button button-blue p70">Arquivar em Container</a>
+                            <a href="#" data-ref="btn-status-gestao-documental" class="button button-blue p70">Status Gestão Documental</a>
+                            <a href="#" data-ref="btn-atribuir-endereco-caixa" class="button button-blue p70">Atribuir Localização Cliente</a>
+
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-audit-endereco" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Arquivar Caixa</h4>
+                        </div>
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Scan</a>
+                            <a data-ref="btn-texto" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                            <a data-ref="btn-leitor" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <br>
+                            <a data-ref="btn-enviar" href="#" class="button button-icon button-blue blue-3d"><i class="fa fa-upload"></i>Enviar</a>
+                            <a data-ref="btn-limpar" href="#" class="button button-icon button-grey grey-3d"><i class="fa fa-trash"></i>Limpar</a>
+
+                            <div class="decoration"></div>
+                        </div>
+                        <div class="container">
+                            <ul class="lista" data-ref="lista"></ul>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-audit-os" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Auditoria de O.S</h4>
+                        </div>
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan-audit-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Scan</a>
+                            <a data-ref="btn-texto-audit-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                            <a data-ref="btn-leitor-audit-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <br>
+                            <a data-ref="btn-enviar-audit-os" href="#" class="button button-icon button-blue blue-3d"><i class="fa fa-upload"></i>Enviar</a>
+                            <a data-ref="btn-limpar-audit-os" href="#" class="button button-icon button-grey grey-3d"><i class="fa fa-trash"></i>Nova O.S</a>
+
+                            <div class="decoration"></div>
+                        </div>
+                        <div class="container">
+                            <div style="padding-bottom:1px;" data-ref="div-ultima-os"></div>
+                            <div style="color: red; padding-bottom:1px;" data-ref="error"></div>
+                            <div style="text-align: center" data-ref="status"></div>
+                            <table data-ref="tabela-audit-os" cellspacing="0" class="table" style="display: none; padding-top:1px;">
+                                <thead>
+                                    <th>N&uacute;mero</th>
+                                    <th>Item</th>
+                                    <th>Status</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-importar-caixa" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Fotografar Espelho Caixa</h4>
+                        </div>
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan-importar-caixa" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Scan</a>
+                            <a data-ref="btn-texto-importar-caixa" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                            <a data-ref="btn-leitor-importar-caixa" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <br>
+                            <a data-ref="btn-enviar-importar-caixa" href="#" class="button button-icon button-blue blue-3d"><i class="fa fa-upload"></i>Enviar</a>
+                            <a data-ref="btn-limpar-importar-caixa" href="#" class="button button-icon button-grey grey-3d"><i class="fa fa-trash"></i>Novo Palete</a>
+
+                            <div class="decoration"></div>
+                        </div>
+                        <div class="container">
+                            <div style="padding-bottom:1px;" data-ref="div-ultimo-palete"></div>
+                            <div style="color: red; padding-bottom:1px;" data-ref="error"></div>
+                            <table data-ref="tabela-importar-caixa" cellspacing="0" class="table" style="display: none; padding-top:1px;">
+                                <thead>
+                                    <th>N</th>
+                                    <th>Caixa</th>
+                                    <th>Img</th>
+                                    <th>FT</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-audit-arquivamento" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Arquivar Documento</h4>
+                        </div>
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-leitor-arquivar" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <a data-ref="btn-limpar-tab-arquivamento" href="#" class="button button-icon button-grey grey-3d"><i class="fa fa-trash"></i>Limpar</a>
+                            <!--<a data-ref="btn-teste" href="#" class="button button-icon button-grey grey-3d"><i class="fa fa-trash"></i>Teste</a>-->
+                            <div class="decoration"></div>
+                        </div>
+                        <div class="container">
+                            <div style="color: red; padding-bottom:1px;" data-ref="error"></div>
+                            <div style="padding-bottom:1px;" data-ref="ultima-caixa"></div>
+                            <table data-ref="tabela-arquivamento" cellspacing="0" class="table" style="display: none; padding-top:1px;">
+                                <thead>
+                                    <th>Documento</th>
+                                    <th>Caixa</th>
+                                    <th>Endere&ccedil;o</th>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-audit-legado" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Importar Legado</h4>
+                        </div>
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Scan</a>
+                            <a data-ref="btn-texto" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                            <a data-ref="btn-leitor" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <br>
+                            <a data-ref="btn-enviar" href="#" class="button button-icon button-blue blue-3d"><i class="fa fa-upload"></i>Enviar</a>
+                            <a data-ref="btn-limpar" href="#" class="button button-icon button-grey grey-3d"><i class="fa fa-trash"></i>Limpar</a>
+                            <div class="decoration"></div>
+                        </div>
+                        <div class="container">
+                            <div style="text-align: center" data-ref="status"></div>
+                            <ul class="lista" data-ref="lista"></ul>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-consulta" style="display: none;margin-top: 20px">
+
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Consulta de Objeto</h4>
+                        </div>
+
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Scan</a>
+                            <a data-ref="btn-texto" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                            <a data-ref="btn-leitor" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <div class="decoration"></div>
+                        </div>
+
+                        <div class="container">
+                            <div data-ref="loading" class="center-text" style="display: none;">
+                                <div class="lds-ellipsis">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container" data-ref="containerMostraObjetoConsultado" style="display: none;">
+                            <div data-ref="item" class="center-text"></div>
+                            <div data-ref="info" class="center-text"></div>
+
+                            <table data-ref="tabela" cellspacing="0" class="table">
+                                <thead></thead>
+                                <tbody></tbody>
+                            </table>
+
+                            <div data-ref="btns" style="text-align: center">
+                                <a data-ref="btn-historico" href="#" class="button button-icon button-blue blue-3d"><i class="fa fa-list"></i>Historico</a>
+                                <a data-ref="btn-expurgo" href="#" class="button button-icon button-orange orange-3d"><i class="fa fa-trash"></i>Expurgo</a>
+                                <div class="decoration"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="container" data-ref="containerMostraObjetosClienteSelecao" style="display: none;">
+                            <table data-ref="tabela-consulta-itens-cliente-consulta" id="tabela-consulta-itens-cliente-consulta" cellspacing="0" class="table">
+                                <thead>
+                                    <th>Objeto</th>
+                                    <th>Descri&ccedil;&atilde;o</th>
+                                    <th></th>
+                                </thead>
+                                <tbody data-ref="listaItensCliente_Crud" id="listaItensCliente_Crud"></tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div data-ref="page" id="main-consulta-dependentes" style="display: none;margin-top: 20px">
+
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Consulta Conteúdo Container</h4>
+                        </div>
+
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Scan</a>
+                            <a data-ref="btn-texto" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                            <a data-ref="btn-leitor" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                        </div>
+
+                        <div data-ref="loading" class="center-text" style="display: none;">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="container" data-ref="containerMostraObjetosContainer" style="display: none;">
+                            <div data-ref="item" class="center-text"></div>
+                            <div data-ref="info" class="center-text"></div>
+                            <table data-ref="tabela" cellspacing="0" class="table">
+                                <thead></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+
+                        <div class="container" data-ref="containerMostraObjetosContainerClienteSelecao" style="display: none;">
+                            <table data-ref="tabela-consulta-itens-cliente-consulta-container" id="tabela-consulta-itens-cliente-consulta" cellspacing="0" class="table">
+                                <thead>
+                                    <th>Objeto</th>
+                                    <th>Descri&ccedil;&atilde;o</th>
+                                    <th></th>
+                                </thead>
+                                <tbody data-ref="listaItensClienteConsultaContainer" id="listaItensClienteConsultaContainer"></tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div data-ref="page" id="main-consulta-os" style="display: none;margin-top: 20px">
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title" id="labelConsultaSolicitacoes">Solicita&ccedil;&otilde;es</h4>
+                        </div>
+
+                        <div data-ref="loading" class="center-text" style="display: none;">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div id="containerConsultaOS" style="display: none;">
+
+                            <div data-ref="btns" id="btns-novas-os" style="text-align: center">
+                                <a data-ref="btn-nova-os-emprestimo" href="#" class="button button-icon button-green green-3d"><i class="fa fa-cart-plus"></i>Nova O.S de Empr&eacute;stimo</a>
+                                <a data-ref="btn-nova-os-devolucao" href="#" class="button button-icon button-green green-3d"><i class="fa fa-cart-plus"></i>Nova O.S de Devolu&ccedil;&atilde;o</a>
+                                <a data-ref="btn-nova-os-implantacao" href="#" class="button button-icon button-green green-3d"><i class="fa fa-cart-plus"></i>Nova O.S de Implanta&ccedil;&atilde;o</a>
+                            </div>
+
+                            <div class="container" style="overflow: auto;">
+                                <div style="color: red; padding-bottom:1px;" data-ref="error"></div>
+                                <table data-ref="tabela-lista-os-disponiveis" id="tableListaOS" cellspacing="0" class="table" style="display: none;">
+                                    <thead>
+                                        <th style="width: 5px">O.S</th>
+                                        <!--<th>Data</th>-->
+                                        <th>Tipo</th>
+                                        <!--<th>Prioridade</th>-->
+                                        <th>Status</th>
+                                    </thead>
+                                    <tbody data-ref="listaOS_Crud" id="listaOS_Crud"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="containerMostraOSConsultada" style="display: none;">
+
+                            <div class="container">
+                                <div class="normal-text no-bottom center-text" id="div-numero-consulta-os"></div>
+                                <div class="normal-text no-bottom center-text" id="div-data-consulta-os"></div>
+                                <div class="normal-text no-bottom center-text" id="div-usuario-consulta-os"></div>
+                                <div class="normal-text no-bottom center-text" id="div-tipo-consulta-os"></div>
+                                <div class="normal-text no-bottom center-text" id="div-itens-cancelados"></div>
+                                <p class="small-text no-bottom center-text" id="div-instrucao-uso-cancelar-item">*Para cancelar um item da O.S clique no &iacute;cone a direita do item.</p>
+                                <p class="small-text no-bottom center-text" id="div-instrucao-uso-adicionar-item">*Para adicionar um item, escanear c&oacute;digo de barras.</p>
+                                <p data-ref="btn-observacao-os" class="small-text no-bottom center-text"><i class="fa fa-edit"></i>*Observa&ccedil;&atilde;o.</p>
+                            </div>
+
+                            <div data-ref="btns" id="btns-consulta-os-carregada" style="text-align: center">
+                                <a data-ref="btn-scan-consulta-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>C&acirc;mera</a>
+                                <a data-ref="btn-texto-consulta-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Texto</a>
+                                <a data-ref="btn-leitor-consulta-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                                <div class="decoration"></div>
+                            </div>
+
+                            <div class="container" data-ref="viewCorpoOS" id="viewCorpoOS">
+
+                                <div class="container">
+
+                                    <div style="color: red; padding-bottom:1px;" data-ref="error"></div>
+                                    <div style="text-align: center" data-ref="status"></div>
+
+                                    <div class="container heading-style-5">
+                                        <h4 class="heading-title">Itens da Solicita&ccedil;&atilde;o</h4>
+                                    </div>
+
+                                    <div class="container" style="overflow: auto;">
+                                        <table data-ref="tabela-consulta-os" class="table" style="display: none; padding-top:1px;">
+                                            <thead>
+                                                <th>Objeto</th>
+                                                <th>Descri&ccedil;&atilde;o</th>
+                                                <th></th>
+                                            </thead>
+                                            <tbody data-ref="listaItemOS_Crud" id="listaItemOS_Crud"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div data-ref="btns" id="btns-rodapeOS" style="text-align: center">
+                                    <a data-ref="btn-confirmar-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-check"></i>Confirmar O.S</a>
+                                    <a data-ref="btn-cancelar-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-ban"></i>Cancelar O.S</a>
+                                    <div class="decoration"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="container" data-ref="containerItemsSelecaoCliente" id="containerItemsSelecaoCliente" style="display: none;">
+
+                                <div class="container heading-style-5">
+                                    <h4 class="heading-title">Selecione um objeto para incluir</h4>
+                                </div>
+
+                                <div class="container" style="overflow: auto;">
+                                    <table data-ref="tabela-consulta-itens-cliente" cellspacing="0" class="table" style="padding-top:1px;">
+                                        <thead>
+                                            <th>Objeto</th>
+                                            <th>Descri&ccedil;&atilde;o</th>
+                                            <th></th>
+                                        </thead>
+                                        <tbody data-ref="listaSelecaoItensClienteOS_Crud" id="listaSelecaoItensClienteOS_Crud"></tbody>
+                                    </table>
+                                </div>
+
+                                <div style="text-align: center">
+                                    <a data-ref="btn-voltar-para-os" href="#" class="button button-icon button-green green-3d"><i class="fa fa-arrow-left"></i>Voltar</a>
+                                    <div class="decoration"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-atribuir-localizacao" style="display: none;margin-top: 20px">
+
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Atribuir Localização Cliente</h4>
+                        </div>
+
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan-atribuir-localizacao" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Camêra</a>
+                            <a data-ref="btn-texto-atribuir-localizacao" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Digitar</a>
+                            <a data-ref="btn-leitor-atribuir-localizacao" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <div class="decoration"></div>
+                        </div>
+
+                        <div data-ref="loading" class="center-text" style="display: none;">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div style="text-align: center" data-ref="status-atribuir-localizacao"></div>
+                            <table data-ref="tabela-atribuir-localizacao" cellspacing="0" class="table" style="padding-top:1px;">
+                                <thead>
+                                    <th>Objeto</th>
+                                    <th>Endereço</th>
+                                </thead>
+                                <tbody data-ref="listaAtribuirLocalizacao" id="listaAtribuirLocalizacao"></tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div data-ref="page" id="main-arquivar-em-container" style="display: none;margin-top: 20px">
+
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Arquivar Objeto em Container</h4>
+                        </div>
+
+                        <div data-ref="btns" style="text-align: center">
+                            <a data-ref="btn-scan-arquivar-em-container" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Camêra</a>
+                            <a data-ref="btn-texto-arquivar-em-container" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Digitar</a>
+                            <a data-ref="btn-leitor-arquivar-em-container" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                            <div class="decoration"></div>
+                        </div>
+
+                        <div data-ref="loading" class="center-text" style="display: none;">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+
+                            <div style="text-align: center" data-ref="container-arquivar-em-container">1º Informe container Principal</div>
+                            <div style="text-align: center" data-ref="status-arquivar-em-container">2º Informe o(s) objeto(s)</div>
+                            <div style="text-align: center" data-ref="status-arquivar-em-container">3º Informe o container Principal p/ Finalizar</div>
+                            <div style="text-align: center" data-ref="total-arquivar-em-container">Total itens: 0</div>
+
+                            <table cellspacing="0" class="table" style="padding-top:1px;">
+                                <thead>
+                                    <th>Objeto</th>
+                                    <th>Localização</th>
+                                </thead>
+                                <tbody data-ref="listaArquivarEmContainer" id="listaArquivarEmContainer"></tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                    <div data-ref="page" id="main-status-gestao-documental" style="display: none;margin-top: 20px">
+
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Status Gestão Documental</h4>
+                        </div>
+
+                        <div id="div-status-gestao-documental-acao">
+
+                            <div data-ref="btns" style="text-align: center">
+                                <a data-ref="btn-scan-status-gestao-documental" href="#" class="button button-icon button-green green-3d"><i class="fa fa-camera-retro"></i>Camêra</a>
+                                <a data-ref="btn-texto-status-gestao-documental" href="#" class="button button-icon button-green green-3d"><i class="fa fa-pencil"></i>Digitar</a>
+                                <a data-ref="btn-leitor-status-gestao-documental" href="#" class="button button-icon button-green green-3d"><i class="fa fa-barcode"></i>Leitor</a>
+                                <div class="decoration"></div>
+                            </div>
+
+                            <div data-ref="loading" class="center-text" style="display: none;">
+                                <div class="lds-ellipsis">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+
+                            <div class="container">
+
+                                <div style="text-align: center" data-ref="passo1">1º Informe a Localização</div>
+                                <div style="text-align: center" data-ref="passo2">2º Informe o Status da Gestão</div>
+                                <div style="text-align: center" data-ref="passo3">3º Informe a Caixa</div>
+
+                                <table data-ref="tabela-status-gestao-documental" cellspacing="0" class="table" style="padding-top:1px;">
+                                    <thead>
+                                        <th>Caixa</th>
+                                        <th>Status</th>
+                                    </thead>
+                                    <tbody data-ref="listaStatusGestaoDocumental" id="listaStatusGestaoDocumental"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-ref="page" id="main-sobre" style="display: none;margin-top: 20px">
+
+                        <div class="container heading-style-5">
+                            <h4 class="heading-title">Sobre</h4>
+                        </div>
+
+                        <div data-ref="btns" style="text-align: center">
+                            <div class="decoration"></div>
+                        </div>
+
+                        <div class="container">
+                            <p class="small-text no-bottom center-text">Docz Mobile.</p>
+                            <p class="small-text no-bottom center-text">Vers&atilde;o: 2.1.5</p>
+                            <p class="small-text no-bottom center-text">+55 61 3374-6216</p>
+                            <p class="small-text no-bottom center-text">suporte@sosdocs.com.br</p>
+                            <p class="small-text no-bottom center-text">https://www.sosdocs.com.br</p>
+                        </div>
+
+                    </div>
+
+                    <div class="container-fullscreen footer footer-light">
+                        <p class="small-text no-bottom center-text" id="div-cliente-logado">Cliente</p>
+                        <p class="small-text no-bottom center-text" id="div-usuario-logado">Usuario</p>
+                        <p class="small-text no-bottom center-text">(c) Copyright 2022. Todos os Direitos Reservados.</p>
+                    </div>
+                    <div class="footer-clear disabled"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img src="" id="imagemCaixa">
+            </div>
+
+        </div>
+
+        <a href="#" class="back-to-top-badge"><i class="fa fa-caret-up"></i>Back to top</a>
+    </div>
+
+    <div id="leitor" class="leitor-block" style="display: none;">
+        <div class="leitor-block-msg"></div>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
+<script type="text/javascript" src="js/framework-plugins.js"></script>
+<script type="text/javascript" src="js/jquery.jgrowl.min.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="js/camera.js"></script>
+<script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="bower_components/swiped/dist/swiped.min.js"></script>
+
+<script type="text/javascript" src="api/api.js"></script>
+<script type="text/javascript" src="api/util/storage.js"></script>
+<script type="text/javascript" src="api/util/sqlite.js"></script>
+<script type="text/javascript" src="api/util/loading.js"></script>
+<script type="text/javascript" src="api/util/error.js"></script>
+<script type="text/javascript" src="api/util/media.js"></script>
+<script type="text/javascript" src="api/util/rest.js"></script>
+
+<script type="text/javascript" src="api/script/generic.js"></script>
+
+<script type="text/javascript" src="api/script/painel_guarda.js"></script>
+<script type="text/javascript" src="api/script/generic_scan.js"></script>
+<script type="text/javascript" src="api/script/legado.js"></script>
+<script type="text/javascript" src="api/script/endereco.js"></script>
+<script type="text/javascript" src="api/script/audit_os.js"></script>
+<script type="text/javascript" src="api/script/arquivamento.js"></script>
+<script type="text/javascript" src="api/script/importar_caixa.js"></script>
+
+<script type="text/javascript" src="api/script/painel_consulta.js"></script>
+<script type="text/javascript" src="api/script/generic_consulta.js"></script>
+<script type="text/javascript" src="api/script/consulta.js"></script>
+<script type="text/javascript" src="api/script/consulta_dependentes.js"></script>
+
+<script type="text/javascript" src="api/script/consulta_os.js"></script>
+<script type="text/javascript" src="api/script/sobre.js"></script>
+
+<script type="text/javascript" src="api/script/painel_gestao.js"></script>
+<script type="text/javascript" src="api/script/atribuir_localizacao.js"></script>
+<script type="text/javascript" src="api/script/arquivar_em_container.js"></script>
+<script type="text/javascript" src="api/script/status_gestao_documental.js"></script>
+
+<script type="text/javascript" src="api/control/layout.js"></script>
+<script type="text/javascript" src="api/control/init.js"></script>
+
+</html>
